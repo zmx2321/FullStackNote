@@ -1,0 +1,7 @@
+进入命令界面
+crtl+alt+f1
+
+exit 退出
+
+reboot 重启
+
