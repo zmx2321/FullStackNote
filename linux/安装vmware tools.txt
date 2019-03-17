@@ -1,0 +1,29 @@
+虚拟机 ==》 安装vmware tools
+
+
+双击“VMware Tools”光驱文件并进入，会看到一个后缀为.tar.gz的压缩文件
+
+
+将压缩文件复制到home目录下，home目录即左侧的主目录文件夹。复制过程用鼠标操作完成即可。（或者其他任意文件夹[download]）
+
+
+
+打开命令行终端，默认应该就是home目录，如果不是home目录，在命令行终端输入“cd ~”命令进入home目录下，在home目录下输入"ls"命令就可以看到我们刚刚复制的压缩包文件。
+
+
+
+将压缩包用tar -zxvf命令解压
+
+
+
+解压完毕用“ls”命令查看，会看到在home目录下产生一个“vmware-tools-distrib”文件夹
+
+
+
+
+用“cd vmware-tools-distrib”命令进入vmware-tools-distrib文件夹，然后在命令行执行：“sudo ./vmware-install.pl”命令，输入用户密码即可进行vmware tools的安装。
+
+
+
+
+为了说明一下VMware Tools是否真正的安装成功，我们可以利用Linux操作系统是否能够全屏显示来验证。如果能够全屏显示了说明VMware Tools安装成功。在VMware“查看”菜单栏下点击“立即适应客户机‘’，等待一会看是否Linux可以全屏显示。
