@@ -1,0 +1,20 @@
+https://www.jianshu.com/p/13fedee165f1  // 各种主题
+
+
+http://equinusocio.github.io/material-theme/#/default  // material主题
+
+
+https://github.com/equinusocio/material-theme/releases/tag/v4.1.5  // 下载（3m）
+
+
+放入package,
+
+
+首选项，设置用户，下面添加两行
+"theme": "Material-Theme.sublime-theme","color_scheme": 
+"Packages/Material Theme/schemes/Material-Theme.tmTheme",
+
+
+首选项，修改主题
+
+
