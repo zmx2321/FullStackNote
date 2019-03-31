@@ -5,5 +5,5 @@ let a = 25;
 	alert(a);
 	let a = 30;
 })();
-> a is not defined
 ```
+> a is not defined
