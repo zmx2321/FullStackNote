@@ -13,6 +13,8 @@
 > [linux社区(内核官网[源代码])](https://www.kernel.org)
 >> 由作者(linux)本人维护
 
+> [centOS](https://www.centos.org/download)
+
 ### 下载
 > DVD：图形界面
 > Everything：图形界面 + 各种软件
