@@ -1,1 +1,7 @@
-# windows基本指令入门
+# PHP初识与基础操作
+
+```
+<?php
+  echo "phpDemo";
+?>
+```
