@@ -9,9 +9,7 @@
 
 ### 社区
 * linux社区：[(https://www.linux.org)](https://www.linux.org)
-
 * linux社区(内核官网[源代码)：[https://www.kernel.org](https://www.kernel.org) => 由作者(linux)本人维护
-
 * centOS：[https://www.centos.org/download](https://www.centos.org/download)
 
 
