@@ -6,6 +6,12 @@
 </head>
 <body>
 	<?php
+
+    //  引入外部文件
+    // include不管有没错，都会执行(require与当前php文件融为一体)
+    // require_once ("incud/a.php");
+    include_once ("incud/a.php");
+
 	  echo "phpDemo";
 	  
 	  // test
