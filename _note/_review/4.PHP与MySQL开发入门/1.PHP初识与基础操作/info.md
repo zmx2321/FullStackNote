@@ -54,4 +54,138 @@ echo $_SESSION['views'];
         echo "登录失败";
     }
 ```
-### 
+
+### php连接mysql增删改查
+```
+<?php
+    // 连接数据库
+    $con = mysql_connect("localhost", "root", "root");
+
+    if (!$con) {
+        // php中连接字符串用点（.）不用加（+）
+        die("Could not connect:" .mysql_error());
+    } else {
+        // 数据库连接成功
+        echo "mysql connect ok <br />";
+
+        // 解决中文乱码
+        mysql_query('SET NAMES UTF8');
+
+        // 指定数据库
+        mysql_select_db("bookticket", $con);
+
+        // 新增
+        // $sql = "INSERT INTO `user` (`user_name`, `user_password`, `user_sex`, `user_phone`, `user_balance`) VALUES ('张o', '123123', '女', '134897425', 128.0)";
+        // 删除
+        // $sql = "DELETE FROM `user` WHERE `user_id` = 5";
+        // 修改
+         $sql = "UPDATE `user` SET `user_name`='2333', `user_phone`=111  WHERE `user_id` = 6";
+
+        $result = mysql_query($sql, $con);
+
+        if (!$result) {
+            die("Error:" .mysql_error());
+        } else {
+            echo "success";
+        }
+    }
+```
+
+### 前后台用form联通
+```
+<form action="mysql.php">
+    <label for="username">
+        <span>名称</span>
+        <input type="text" id="username" name="username" />
+    </label>
+    <label for="phone">
+        <span>手机</span>
+        <input type="text" id="phone" name="phone" />
+    </label>
+    <input type="submit" value="提交" />
+    <input type="reset" value="重置" />
+</form>
+
+<?php
+    // 连接数据库
+    $con = mysql_connect("localhost", "root", "root");
+
+    if (!$con) {
+        // php中连接字符串用点（.）不用加（+）
+        die("Could not connect:" .mysql_error());
+    } else {
+        // 数据库连接成功
+        echo "mysql connect ok <br />";
+
+        // 解决中文乱码
+        mysql_query('SET NAMES UTF8');
+
+        // 指定数据库
+        mysql_select_db("bookticket", $con);
+
+        $username = $_REQUEST['username'];
+        $phone = $_REQUEST["phone"];
+
+        // 新增
+        // $sql = "INSERT INTO `user` (`user_name`, `user_password`, `user_sex`, `user_phone`, `user_balance`) VALUES ('张o', '123123', '女', '134897425', 128.0)";
+        // 删除
+        // $sql = "DELETE FROM `user` WHERE `user_id` = 5";
+        // 修改
+        // $sql = "UPDATE `user` SET `user_name`='2333', `user_phone`=111  WHERE `user_id` = 6";
+
+        // char型要加''符号
+        $sql = "INSERT INTO `user` (`user_name`, `user_password`, `user_sex`, `user_phone`, `user_balance`) VALUES ('".$username."', '123123', '女', $phone, 128.0)";
+
+        $result = mysql_query($sql, $con);
+
+        if (!$result) {
+            die("Error:" .mysql_error());
+        } else {
+            echo "success";
+        }
+    }
+```
+
+### 输出数据库数据到页面
+```
+<?php
+// 连接数据库
+$con = mysql_connect("localhost", "root", "root");
+
+if (!$con) {
+    // php中连接字符串用点（.）不用加（+）
+    die("Could not connect:" .mysql_error());
+} else {
+    // 数据库连接成功
+    echo "mysql connect ok <br />";
+
+    // 后台解决中文乱码
+    mysql_query('SET NAMES UTF8');
+    // 报头（前端解决中文乱码）
+    header("Content-type: text/html; charset=utf-8");
+
+    // 指定数据库
+    mysql_select_db("bookticket", $con);
+
+    $sql = "select * from `user`";
+
+    $result = mysql_query($sql, $con);
+
+    $arr = array();
+
+    while ($row = mysql_fetch_array($result)) {
+        /*echo $row['user_name']."".$row['user_phone'];
+        echo "<br />";*/
+        array_push($arr,
+            array(
+                "user_name" => $row['user_name'],
+                "user_phone" => $row['user_phone']
+            )
+        );
+
+        $result1 = array("errcode"=>0, "result"=>$arr);
+
+        echo json_encode($result1);
+    }
+}
+```
