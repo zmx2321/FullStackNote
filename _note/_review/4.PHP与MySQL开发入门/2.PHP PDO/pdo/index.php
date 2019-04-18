@@ -1,6 +1,3 @@
-# PHP PDO
-* 当遇到php链接失误或者错误的时候，可以使用php pdo *
-```
 <?php
     header("Content-Type: text/html; charset=utf-8");
     $dbms = "mysql";
@@ -28,6 +25,3 @@
     } catch (PDOException $e) {
             die("Error:" .$e.getMessage(). "<br />");
     }
-```
-
-### 
