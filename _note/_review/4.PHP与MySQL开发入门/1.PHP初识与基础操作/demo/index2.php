@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -9,7 +9,9 @@
     // 数组
     $arrayTest = array("0" => "苹果", "1" => "测试");
     // 输出json
-    echo json_encode($arrayTest);
+    // echo json_encode($arrayTest);
+       echo JSON_UNESCAPED_UNICODE($arrayTest);
+
     echo $arrayTest;
     echo $arrayTest[0];
 ?>
