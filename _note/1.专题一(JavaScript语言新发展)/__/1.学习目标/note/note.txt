@@ -1,0 +1,35 @@
+﻿18.Windows(cmder/) + 虚拟机 + 深度Linux Mac
+https://github.com/microsoft/Terminal
+
+专题一.JavaScript语言新发展【直播课】
+第一周录播课
+专题一.JavaScript语言新发展【深度实践课】-》 第二周录播课
+Java Net PHP ->接触过后端的同学 学习ES10 为node做准备 王老师
+
+函数式编程 redux frp 前端云端化编程
+
+1.图书馆管理系统 + 自动化测试 + ES6 + PHP + Linux
+2.图书馆管理系统 + 自动化测试 + ES6 + PHP + Linux + Node （原理）
+3.图书馆管理系统 + 自动化测试 + ES6 + PHP + Linux + Node(Egg) + webpack
++CI+CLI(VUE-CLI)
+4.性能优化 SSR + MPA + SPA + 三大框架  + 浏览器解析运行原理
+5.CSS Workflow 现代化的CSS理论
+6.基于IOC方式的nodejs设计架构
+================崩溃依次===============
+7.vue+react原理 16.8 fiber 原理
+8.typescript 图书馆管理系统 soild架构实现
+9.同构化JavaScript + vue ssr 
+10.webpack的原理 手写一个webpack优化 webpack4+5 
+11.总结 线下
+================崩溃依次===============
+12.k8s + docker 入门
+13.c语言 rust  deno源码 入门
+14.前端跨界 pc android ios pwa amp
+15.微前端架构设计(崩溃依次)
+16.前端中的数据结构和算法
+17.leetcode dom diff、koa2、immutablejs、redux、了解闭包作用域名的原理！！
+18.前端图形学！！3D COCOS + IOT.js
+19.前端黑客安全 前端设计模式 V8前端必须知道的 整个浏览器js解析机制
+================崩溃依次===============
+全部删掉 前端云端化编程
+
