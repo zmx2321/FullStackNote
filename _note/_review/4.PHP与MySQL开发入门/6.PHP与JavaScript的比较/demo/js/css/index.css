@@ -1,0 +1,43 @@
+.nxncal{
+    min-width: 900px;
+    min-height: 270px;
+    border: solid 1px #f92b2b;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.nxncal li{
+    margin-bottom: 15px;
+    height: 22px;
+    line-height: 22px;
+    padding: 0 15px;
+}
+
+.nxncal li:last-child{
+    margin-bottom: 0;
+}
+
+.nxncal dd{
+    display: inline-block;
+    margin-right: 15px;
+}
+
+.nxncal dd:last-child{
+    margin-right: 0;
+}
+
+.c1{
+    background: #a59b9b;
+}
+
+.c2{
+    background: #fb9191;
+}
+
+.c3{
+    background: #95e7d7;
+}
