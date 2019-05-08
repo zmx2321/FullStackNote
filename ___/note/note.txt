@@ -1,0 +1,6 @@
+﻿jsdoc[http://shouce.jb51.net/jsdoc/tags.html]
+js学习[https://github.com/MarsPen/-notes-summary/blob/master/javascript/index.md]
+前端面试题[https://github.com/Advanced-Frontend/Daily-Interview-Question]
+
+
+先问基础，包括new call this bind apply 的实现，手写哦，在问对象的基本操作堆栈，  在之后问原型链 构造 实例的区区别等。之后在问框架vue 或者recat。 实现原理 方法的实现比如 watch 计算属性等。问一下业务场景的bug 解决主要考察解决问题的能力。之后高级一点的，问一下cli 构建工具，node 架构。算法数据结构也要考虑在内，快排，链表，二叉树
