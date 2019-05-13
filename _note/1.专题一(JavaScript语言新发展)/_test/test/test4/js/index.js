@@ -21,5 +21,8 @@ C3.prototype.name = "yuan";
 console.log((new C1().name) + (new C2().name) + (new C3().name));
 
 /*
-
+1、yideng
+2、undefined
+3、fe
+yidengundefinedfe
 */

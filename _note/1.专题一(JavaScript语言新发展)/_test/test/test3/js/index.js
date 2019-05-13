@@ -7,7 +7,9 @@ var num = 1;
 function yideng() {
     "use strict";
 
-    console.log(this.num ++);
+    console.log(this)
+
+    console.log(this.num++);
 }
 
 function yideng2() {
@@ -22,5 +24,8 @@ function yideng2() {
 yideng();
 
 /*
-
+1、2
+2、Cannot read property 'num' of undefined
+- 禁止this关键字指向全局对象
+- 严格模式不允许this值为null或undefined
 */
