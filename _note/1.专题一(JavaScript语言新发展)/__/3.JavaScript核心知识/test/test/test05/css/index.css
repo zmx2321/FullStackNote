@@ -1,0 +1,19 @@
+ul > li {
+    display: inline-block;
+    width: 100px;
+    height: 60px;
+    text-align: center;
+    line-height: 60px;
+    color: #ffffff;
+    font-size: 16px;
+    font-family: -webkit-pictograph;
+    cursor: pointer;
+    background: #dedede;
+    transition: 0.2s linear;
+}
+
+ul > li:hover {
+    background: #bde2dd;
+    transition: 0.3s linear;
+    color: #333333;
+}
