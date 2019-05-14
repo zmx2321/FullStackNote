@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>了解按引用传递</title>
+</head>
+
+<body>
+    <script>
+        function test(m) {
+            m = { v: 5 }
+            // m.v = 5;
+        }
+        var m = { k: 30 };
+        test(m);
+        alert(m.v);
+        //按值传递
+        // var a = 1;
+        // var b = a;
+        // b = 3;
+        // alert(a);
+        // alert(b);
+        //按引用传递 址
+        // var a = { qq: 25 };
+        // var b = a;
+        // b = { xx: 111 };
+        // console.log(a);
+        // console.log(b);
+    </script>
+</body>
+
+</html>

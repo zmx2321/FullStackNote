@@ -1,0 +1,22 @@
+1.函数表达式定义的时候  函数的名字外部不能访问 内部也不能修改
+(function test() {
+    //只能在函数内部进行访问
+    test = 1;
+    console.log("🍎",typeof test);
+})();
+q();
+console.log(test);
+
+2.bind方式 new??
+var o = {
+    foo: function () {
+        console.log("京程");
+    },
+    bar() {
+        console.log("一灯");
+    }
+}
+var f = o.foo.bind({});
+new f();
+var p = o.bar.bind({});
+new p()

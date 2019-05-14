@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>this谁调用指向谁</title>
+</head>
+
+<body>
+    <script src="./bind.js"></script>
+    <script>
+        var num = 1;
+        // function yideng() {
+        //     "use strict";
+        //     console.log(this.num++);
+        // }
+
+        function yideng2() {
+            console.log(++this.num);
+        }
+        (function () {
+            "use strict";
+            yideng2();
+        })();
+        // yideng();
+        // this.a = 20;
+        // function test(data,data2) {
+        //     console.log(data);
+        //     console.log(data2);
+        // }
+        // test.prototype.yideng = function(){
+        //     console.log("测试函数");
+        // }
+        // var obj = {
+        //     a: 30
+        // }
+        // var result = test.bind(obj,"京程");
+        // var ins = new result("一灯");
+        // ins.yideng();
+
+        // this.a = 20;
+        // var test = {
+        //     a: 40,
+        //     // init: () => {
+        //     init: function () {
+        //         console.log(this.a);
+        //         //构造函数的优先级别 》原型链
+        //         // function go() {
+        //         //     this.a = 50;
+        //         //     // console.log(this.a);
+        //         // }
+        //         // go.prototype.a = 60;
+        //         // console.log((new go()).a);
+        //     }
+        // }
+        // test.init();
+        // var test = {
+        //     a: 40,
+        //     init: () => {
+        //         console.log(this.a);
+
+        //         go.prototype.a = 50;
+        //         return go;
+        //     }
+        // };
+        // //var p = test.init();
+        // //p();
+        // new (test.init())();
+        // call apply bind
+        // this.a = 20;
+        // function test() {
+        //     console.log(this.a);
+        // }
+        // var obj = {
+        //     a: 30
+        // }
+        // var result = test.bind(obj);
+        // result();
+
+        // var o = {
+        //     foo: function () {
+        //         console.log("京程");
+        //     },
+        //     bar() {
+        //         console.log("一灯");
+        //     }
+        // }
+        // var f = o.foo.bind({});
+        // new f();
+        // var p = o.bar.bind({});
+        // console.log(p);
+        // new p()
+    </script>
+</body>
+
+</html>

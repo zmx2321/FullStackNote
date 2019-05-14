@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>函数提升</title>
+</head>
+
+<body>
+    <iframe></iframe>
+    <script>
+        // function yideng() {
+        //     console.log(1);
+        // }
+        // (function () {
+        //     // var yideng;
+        //     if (false) {
+        //         function yideng() {
+        //             console.log(2);
+        //         }
+        //     }
+        //     yideng();
+        // })();    
+        // function test(){
+        //     var a =1;
+        // }
+        // test();
+        // alert(a);
+
+        // 10 - 98/10 =  1
+        // var length = 10;
+        function fn() {
+            console.log(this.length);
+        }
+        // fn();
+        var yideng = {
+            length: 5,
+            method: function (fn) {
+                fn();
+                //arguments.fn();
+                arguments[0]();
+            }
+        };
+        yideng.method(fn, 1);
+    </script>
+</body>
+
+</html>
