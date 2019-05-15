@@ -8,7 +8,7 @@ var test = {
     init: ()=> {
         console.log(this.a);
         function go() {
-            this.a = 60
+            // this.a = 60
 
             console.log(this.a);
         }
@@ -19,8 +19,8 @@ var test = {
     }
 }
 
-var p = test.init();
-p();
+// var p = test.init();
+// p();
 new(test.init())();
 
 /*

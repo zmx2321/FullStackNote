@@ -386,3 +386,14 @@ result("world");  // 输出hello world
 ##### 示例2-1-1-5
 > ** <label style="color:red">重点：手写bind</label> **
 - 见demo案例
+
+
+### call
+```
+var a = function(){
+     console.log(this);    // 'littledu'
+     console.log(typeof this);      //  Object
+     console.log(this instanceof String);    // true
+}
+a.call('littledu');
+```
