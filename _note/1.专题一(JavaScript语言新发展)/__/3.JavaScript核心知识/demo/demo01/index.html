@@ -17,10 +17,15 @@
 <!-- js s -->
 <script src="js/index.js"></script>
 <script>
-	/*// 不引用不报错
+	// this.a = 20;
+
 	function test(data1, data2) {
 		console.log(data1);
 		console.log(data2);
+    }
+
+    test.prototype.yideng = function () {
+		console.log("测试函数");
     }
 
     var obj = {
@@ -28,7 +33,8 @@
 	}
 
 	var result = test.bind(obj, "hello");
-	result("world");  // 输出hello world*/
+	var ins = new result("world");
+	ins.yideng();
 </script>
 <!-- js e -->
 </body>
