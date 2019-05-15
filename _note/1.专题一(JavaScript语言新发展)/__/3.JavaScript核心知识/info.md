@@ -369,7 +369,20 @@ new result();  // undefined
 ```
 
 ##### 示例2-1-1-4
-> ** <label style="color:red">重点：手写bind</label> **
+```
+function test(data1, data2) {
+	console.log(data1);
+	console.log(data2);
+}
+
+var obj = {
+    a: 30
+}
+
+var result = test.bind(obj, "hello");
+result("world");  // 输出hello world
 ```
 
-```
+##### 示例2-1-1-5
+> ** <label style="color:red">重点：手写bind</label> **
+- 见demo案例

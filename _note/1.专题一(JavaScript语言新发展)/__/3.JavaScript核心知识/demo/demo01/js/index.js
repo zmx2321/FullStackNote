@@ -10,4 +10,5 @@ Function.prototype.bind = function (oThis) {
 
     // 把外面的参数拿过来
     var aArgs = Array.prototype.slice.call(arguments, 1);
+    fToBind = this;
 }
