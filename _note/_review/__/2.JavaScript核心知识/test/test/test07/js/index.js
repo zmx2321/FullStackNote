@@ -21,7 +21,7 @@ function yideng() {
 /*
 函数提升相当于
 (function () {
-    function yideng;  // undefind
+    var yideng;  // undefind
 
     if (false) {
         function yideng() {

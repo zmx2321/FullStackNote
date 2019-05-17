@@ -18,6 +18,9 @@
 ### 创建目录
 * mkdir aaa
 
+* mkdir -p 文件夹名
+> p 确保目录名称存在，不存在的就建一个
+
 ### 复制文件
 * cp xxx.txt aaa/xxx.text
 > 复制的文件可以改名，在路径下直接写
@@ -48,3 +51,6 @@
 ### touch
 > touch index.js (新建文件)
 >> vi index.js (按一下i)
+
+### 查看文件
+* cat 文件名
