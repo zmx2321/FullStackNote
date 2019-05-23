@@ -1,157 +1,73 @@
-# 你不知道的html
+# JavaScript与QA测试工程师
+### 对开发的称呼：
+* QA 测试
+* FE 前端
+* RD 后端
+* OP 运维
+* DB 数据库
+* DBA 数据库开发
 
-##  跨域有几种解决方案
-*jsonp*
-```
-$.ajax({
-	type: "json"
-});
-```
-*iframe*
+### 单元测试
+* 原则：
+> 单一职责,接口抽象，层次分离
+* 断言库：
+> 保证最小单元是否正常运行检测方法
+> 能判断是否
+* 测试风格
+1. TDD => 关注所有的功能是否被实现
+> 每一个功能都必须有对应的测试用例
+2. BDD => 关注整体行为是否符合整体预期
+> 编写的每一行代码都有目的，提供一个全面的测试用例集（国内大部分使用）
 
+### 单元测试框架、单元测试生命周期
+> 见ppt
 
-## 同源策略(使cookie等不能在各个域名共享)
-> 同源策略是一种约定，是浏览器最核心也是基本的安全功能；
-> web是构建在同源策略基础之上的；
-> 浏览器只是针对同源策略的一种实现
->> 同源策略是由Netcape(网景)公司提出的一个著名安全策略
->>> #### 同源
->>>> 协议相同(http(s)://)
->>>> 域名相同(www.baidu.com)
->>>> 端口相同(80)
->>> *二级域名和一级域名不是同源(父的永远比子的优先级高)*
->>> *如果非同源，那么在请求数据时，浏览器会在控制台报一个异常，提示拒绝访问*
->>> *提交表单不会受到同源策略的限制(跨站攻击)*
-```
-<form action="http://www.aa.com/a.php">
-	<input type="text">
-	<button type="submit">提交</button>
-</form>
-```
+### 自动化单元测试
+#### 准备工作
+**和npm一样，yarn和cnpm也是环境包工具**
+`npm install -g yarn`
+* 确定package包
+`npm init -y`
+* 如果装了一个包，为了防止发生变化报错，在本地加了一个锁，于是有了package-lock.json
+* 去掉包(yarn remove xxx)
+#### 开始
+1. `npm init -y`
+2. 新建一个tests/unit/index.js文件，新建一个tests/unit/index.spec.js文件
+> unit存放所有的单测文件
+3. 在index.js里面写方法，index.spec.js里面写测试
+4. 将断言测试环境装进来
+* 1. 使用[Krama](https://github.com/karma-runner/karma)
 
-
-### 同源策略，三种行为受到限制(跨域)
-* cookie(10-20kb), LocalStroage(离线缓存5M), IndexDb(50M)无法读取
-* DOM无法获得
-* AJAX请求不能发送
-
-* LocalStroage超过2.5M就会出现性能的问题, *
-* IndexDb类似关系型数据库(IndexDb和web sql是异步读取数据[回调]) *
-`var db = openDatabase('mydatabase', '2.0', 'mydb', 2*1024);`
-
-> * cookie是服务器写入浏览器的一小段信息，只有同源的网页才能共享，但是，两个网页一级域名相同，只是二级域名不能，则浏览器允许通过设置document.domain共享cookie(这种方法值适用于cookie和iframe[最实用])
-```
-A网页(http://w1.example.com/a.html)设置一个cookie
-document.domain = "example.com"  // 设置同源策略
-
-B网页(http://w2.example.com/b.html)就可以取到这个cookie
-let allCookie = document.cookie
-
-* 一般都是在后台加上domain，在domain域名下的所有数据可以共享 *
-```
-
-
-### 标签跨域
-* img可以实现跨域
-* iframe可以实现跨域
-* script可以实现跨域
-> ## img跨域
->> ### 测试网速
-```
-let s = new Image();
-let start = Date.now();
-s.src = "http://baidu.com/s.gif"  // 1kb
-s.onload = (arg) => {
-	let end = Date.now();
-	t = end - start;
-	v = 1 / t + "kb/s";
-	...
-}
-```
-
->> ###css跨域(css攻击)
-```
-body{
-	background: url(...)
-}
-```
-
-
-# 跨域的原理
-* jsonp
-```
-<script type="text" src="http://www.sss.com/index.pnp?callback=test"></script>
-前端传过来一个callback
-后端进行处理
-
-if(callback){
-	<!-- callback({"data": 123}) -->
-	test({"data": 123})  // 方法
-} else {
-	{"data": 123}
-}
-```
-
-前端就能获取到值(jq自己把这个写好了，不用手动加)
-test(data) => {
-	console.log(data);  // {"data": 123}
-}
-* ajax
-```
-/*会跨域*/
-$.ajax({
-	url: "http://www.xxx.com",
-	success: (res) => {
-		// body
-	}
-});
-```
-
-### 突破同源策略
-img, iframe, script(jsonp), link(background)
-
-
-### 语义化
-> 尽量少些html
-* 减少dom渲染 *
-* 减小文件大小 *
-* 1个html顶3个元素 * 
-```
-<header>
-	<nav></nav>
-</header>
-
-<div class="content">
-	<!-- <aside></aside>
-	<article></article> -->
-
-	<section></section>
-	<section></section>
-
-	<!-- <address></address> -->
-</div>
-
-<footer></footer>
-```
-
-
-### cors跨资源共享(攻击手段)
-> 是跨源ajax最根本解决办法，相比jsonp只能发送get请求，cors允许任何类型的请求
-
-
-### postMessage
-域之间(跨窗口)通信
-```
-* 父窗口对子窗口通信 *
-let popup = window.open("http://bbb.com", 'title');
-popup.postMessage("Hello", "http://bbb.com")
-```
-
-
-### websocket跨窗口通信
-
-
-
-### 高阶通信
-> WebSocket，postMessage(ifarame, image)
-> (代码压缩成图片)
+> 使用npm在本地安装
+`npm install karma --save-dev`
+>> save 是在开发的时候使用，编译完还在用，save-dev是在开发的时候使用，编译的时候不使用
+> 或者使用yarn安装
+`yarn add krama --dev`
+_有一个bin文件夹_
+>> yarn 有缓存，装的比npmn快
+>>> 把包装在全局
+`yarn global add karma-cli`
+* 发布一个包
+`npm login`
+`npm publish`
+5. 在package.js里面写测试
+> script里面"unit" : "karma start" => 单测
+6. npm run unit就可以直接运行单测文件
+7. 在有krama的本地中初始化生成karma.conf.js文件
+`krama init`
+* 1. jasmine判断一下测试文件（断言）
+* 2. 是否用require
+* 3. 浏览器
+* 4. 是否监听
+8. 修改karma.conf.js，运行npm run unit
+9. 报错，继续装依赖(cnpm)
+`npm install karma-jasmine karma-chrome-launcher jasmine-core --save-dev`
+10. 继续运行，安装
+`npm install karma-phantomjs-launcher --save-dev`
+11. 运行
+12. 如果不行，改用chrome,要装chrome的启动器
+`yarn add karma-chrome-launcher`
+13. 成功之后打开浏览器返回success关掉浏览器
+14. 代码测试覆盖率检查
+`yarn add karma-coverage --dev`
+15. 运行之后，把doc中的文件拿出来看结果
