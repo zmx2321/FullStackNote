@@ -147,7 +147,10 @@ rize
 测试UI
 PhantomCSS
 BACKSTOPJS
+* engine_script引擎脚本
+* html_report    ./doc/..
+* ci_report  ./doc/..
+`backstop test`运行
 
 
 ### mochaRunner(测试异步)
-
