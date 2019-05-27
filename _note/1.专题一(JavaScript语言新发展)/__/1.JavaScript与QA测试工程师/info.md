@@ -71,3 +71,83 @@ _有一个bin文件夹_
 14. 代码测试覆盖率检查
 `yarn add karma-coverage --dev`
 15. 运行之后，把doc中的文件拿出来看结果
+
+
+### e2e--端对端测试(selenium)
+**selenium(浏览器自动化测试框架)**
+> [selenium-webdriver](https://www.npmjs.com/package/selenium-webdriver)
+> npm install selenium-webdriver --save
+```
+test.spec.js
+const {Builder, By, Key, until} = require('selenium-webdriver');
+
+(async function example() {
+  let driver = await new Builder().forBrowser('firefox').build();
+  try {
+    await driver.get('http://www.google.com/ncr');
+    await driver.findElement(By.name('q'));.sendKeys('webdriver', Key.RETURN);
+    await driver.wait(until.titleIs('webdriver - Google Search'), 1000);
+  } finally {
+    await driver.quit();
+  }
+})();
+
+```
+1. 新建e2e文件夹
+2. 新建*.spec.js
+3. 从npm官网中复制
+4. 从npm官网下载浏览器驱动，放到项目文件根目录中
+5. package.js 
+`node ./tests/e2e/baidu.spec.js`
+6. 运行
+`npm run e2e`
+
+
+### e2e--端对端测试(rize)[爬虫]
+> [rize](https://rize.js.org/)
+> npm install --save-dev @types/puppeteer
+> npm install --save-dev puppeteer rize
+或
+> yarn add --dev puppeteer rize
+```
+git.spec.js
+rize
+  .goto('https://github.com/')
+  .type('input.header-search-input', 'node')
+  .press('Enter')
+  .waitForNavigation()
+  .assertSee('Node.js')
+  .end()  // Don't forget to call `end` function to exit browser!
+```
+
+1. 新建*.spec.js文件，复制
+2. 安装
+3. 运行
+`node ./tests/e2e/baidu.spec.js`
+
+
+### 测试react单元
+```
+"jasmine-core": "^3.4.0",
+"jest-dom": "^3.2.2",
+
+"react-dom": "^16.8.6",
+"react-scripts": "^3.0.1",
+"react-testing-library": "^7.0.1",
+```
+* 新建一个src文件夹，index.js
+* 写一个react组件(也是一个单元)
+* 写一个测试index.spec.js
+* 用jest去测试react单元(facebook)
+* unit改成react-script test -env-jsdom
+* jest会把tests里的文件都执行了
+
+
+### f2eTest(UI Recorder)
+测试UI
+PhantomCSS
+BACKSTOPJS
+
+
+### mochaRunner(测试异步)
+

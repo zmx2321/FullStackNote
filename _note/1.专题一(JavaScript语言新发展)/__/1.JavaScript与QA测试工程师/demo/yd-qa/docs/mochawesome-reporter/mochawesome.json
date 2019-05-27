@@ -1,0 +1,81 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2019-05-20T14:30:31.798Z",
+    "end": "2019-05-20T14:30:31.821Z",
+    "duration": 23,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false,
+    "passPercentClass": "danger",
+    "pendingPercentClass": "danger"
+  },
+  "suites": {
+    "uuid": "2dadd9f6-2829-4a37-92e0-e86f0d5bb939",
+    "title": "",
+    "fullFile": "",
+    "file": "",
+    "beforeHooks": [],
+    "afterHooks": [],
+    "tests": [],
+    "suites": [
+      {
+        "uuid": "db39a841-1f32-4b2a-9097-62c470f753c6",
+        "title": "node接口",
+        "fullFile": "/Users/yuanzhijia/Desktop/yd-qa/tests/service/router.spec.js",
+        "file": "/tests/service/router.spec.js",
+        "beforeHooks": [],
+        "afterHooks": [],
+        "tests": [
+          {
+            "title": "test接口测试",
+            "fullTitle": "node接口 test接口测试",
+            "timedOut": false,
+            "duration": 15,
+            "state": "failed",
+            "pass": false,
+            "fail": true,
+            "pending": false,
+            "code": "axios.get(\"http://xcssss.com\")\n.then(function(response){\n    if(response.data.xx == \"\"){\n        done();\n    }else{\n        done(new Error(\"数据请求出错\"))\n    }\n}).catch(function(error){\n    done(error);\n})",
+            "err": {
+              "message": "Error: getaddrinfo ENOTFOUND xcssss.com xcssss.com:80",
+              "estack": "Error: getaddrinfo ENOTFOUND xcssss.com xcssss.com:80\n    at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:56:26)"
+            },
+            "isRoot": false,
+            "uuid": "4f0aec5c-e404-44e9-ad64-47dd3f2975e3",
+            "isHook": false,
+            "skipped": false
+          }
+        ],
+        "suites": [],
+        "passes": [],
+        "failures": [
+          "4f0aec5c-e404-44e9-ad64-47dd3f2975e3"
+        ],
+        "pending": [],
+        "skipped": [],
+        "duration": 15,
+        "root": false,
+        "rootEmpty": false,
+        "_timeout": 2000
+      }
+    ],
+    "passes": [],
+    "failures": [],
+    "pending": [],
+    "skipped": [],
+    "duration": 0,
+    "root": true,
+    "rootEmpty": true,
+    "_timeout": 2000
+  },
+  "copyrightYear": 2019
+}
