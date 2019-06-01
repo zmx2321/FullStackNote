@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // function fn() {
+        //     //iframe数量
+        //     console.log(this.length);
+        // }
+        // var yideng = {
+        //     length: 5,
+        //     method: function () {
+        //         "use strict";
+        //         fn();
+        //         arguments[0]()
+        //     }
+        // }
+        // const result = yideng.method.bind(null);
+        // result(fn, 1);
+        function yideng(a, b, c) {
+            console.log(this.length);
+            // console.log(arguments.callee.length);
+            console.log(this.callee.length);
+        }
+        function fn(d) {
+            arguments[0](10, 20, 30, 40, 50);
+        }
+        fn(yideng, 10, 20, 30);
+        // console.log("🍎",yideng.length);
+    </script>
+</body>
+
+</html>
