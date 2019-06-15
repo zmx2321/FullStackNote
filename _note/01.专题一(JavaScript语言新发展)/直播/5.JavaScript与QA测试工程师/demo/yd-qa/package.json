@@ -1,0 +1,35 @@
+{
+  "name": "yd-qa",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "unit": "react-scripts test --env=jsdom",
+    "unit:karma": "karma start",
+    "e2e": "node ./tests/e2e/baidu.spec.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jasmine-core": "^3.4.0",
+    "jest-dom": "^3.2.2",
+    "karma": "^4.1.0",
+    "karma-coverage": "^1.1.2",
+    "karma-jasmine": "^2.0.1",
+    "karma-phantomjs-launcher": "^1.0.4",
+    "mochawesome": "^3.1.2",
+    "puppeteer": "^1.16.0",
+    "react-dom": "^16.8.6",
+    "react-scripts": "^3.0.1",
+    "react-testing-library": "^7.0.1",
+    "rize": "^0.8.0"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "karma-chrome-launcher": "^2.2.0",
+    "mocha": "^6.1.4",
+    "selenium-webdriver": "^4.0.0-alpha.1"
+  }
+}

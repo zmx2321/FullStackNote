@@ -1,0 +1,41 @@
+<!-- html:5 -->
+<!DOCTYPE html>
+<html >
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no"/>
+	<title>手写一个bind</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css"/>
+	<link rel="stylesheet" type="text/css" href="css/index.css"/>
+</head>
+
+<body>
+<!-- body s -->
+
+<!-- body e -->
+
+<!-- js s -->
+<script src="js/index.js"></script>
+<script>
+	// this.a = 20;
+
+	function test(data1, data2) {
+		console.log(data1);
+		console.log(data2);
+    }
+
+    test.prototype.yideng = function () {
+		console.log("测试函数");
+    }
+
+    var obj = {
+	    a: 30
+	}
+
+	var result = test.bind(obj, "hello");
+	var ins = new result("world");
+	ins.yideng();
+</script>
+<!-- js e -->
+</body>
+</html>
