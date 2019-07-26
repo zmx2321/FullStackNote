@@ -1,0 +1,7 @@
+﻿1、关于margin和padding的说法正确的是？
+相邻的margin可以融合，相邻的padding不可以融合
+
+
+2、行内元素和块级元素的区别是什么？行内元素的padding和margin可以设置吗？
+块级元素会自动换行，而行内元素不会自动换行。
+行内元素的padding和margin可以通过display:block变成块级元素

@@ -1,0 +1,18 @@
+.box{
+	width: 100px;
+}
+
+.menu2{
+	display: none;
+	font-size: 0;
+	background: #ccc;
+}
+
+.menu2 li{
+	padding: 10px;
+	font-size: 12px;
+}
+
+.menu2 li:hover{
+	background: #666;
+}

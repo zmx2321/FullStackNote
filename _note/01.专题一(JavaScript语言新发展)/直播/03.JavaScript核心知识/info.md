@@ -1322,6 +1322,9 @@ C3.prototype.name = "yuan";
 console.log((new C1().name) + (new C2().name) + (new C3().name));
 ```
 
+---
+<br />
+
 > ### 3. 请写出以li的输出值，并用三种方法正确输出li里的数字
 __<font color="#666">原题：</font>__
 
@@ -1520,6 +1523,9 @@ function foo () {
           }
         ```
 
+---
+<br />
+
 > ### 4. 请写出输出值，并解释为什么。
 __<font color="#666">原题：</font>__
 
@@ -1664,7 +1670,7 @@ __<font color="#8BB0D2">答案：</font>__
 > 1. 第一次输出：<br />
 > {qq: 25}
 > 2. 第二次输出：<br />
-> {xx: 1}
+> {xx: 11}
 
 __<font color="#8BB0D2">解析：</font>__
 当对象被赋值时，如果那个对象重写了，那么两个对象不再有关联。
@@ -1674,10 +1680,10 @@ var a = {
 };
 var b = a;
 
-b.xx = 1;
+b.xx = 11;
 
 console.log(a);  // {qq: 25}
-console.log(b);  // {xx: 1}
+console.log(b);  // {xx: 11}
 ```
 
 > #### <font color="#8BB0D2">4-4 示例：</font>
@@ -1720,7 +1726,7 @@ console.log(m);  // {k: 30, v: 5}
 ```
 function test(x) {
     m = {
-        v: 30
+        v: 5
     }
 }
 
@@ -1732,14 +1738,16 @@ test(m);
 console.log(m);
 ```
 __<font color="#8BB0D2">答案：</font>__
-> {k: 30, v: 5}
+> {v: 5}
 
 __<font color="#8BB0D2">解析：</font>__
 - `test(m)`中的m和外面的m没有关系，就是一个简单的实参。
 - 首先执行`m.k=30;`，再执行test方法，将m对象的值传入当做实参，但test方法它接收的实参是x，x未定义（x is not defined），所以他这里就只是执行了方法，重写了m的值，但m.k的值并没有带过去，所以输出的只有m.v的值
 ```
-function test(m) {
-    m.v = 5;
+function test(x) {
+    m = {
+        v: 5
+    }
 }
 
 var m = {
@@ -1749,6 +1757,9 @@ var m = {
 test(m);
 console.log(m);  // {v: 5}
 ```
+
+---
+<br />
 
 > ### 5. 请写出输出值，并解释为什么。
 __<font color="#666">原题：</font>__
@@ -1869,6 +1880,9 @@ test();
 alert(a);  // a is not defined
 ```
 
+---
+<br />
+
 > ### 6. 请用一句话算出0-100之间学生的学生等级，如90-100为一等生、80-90为二等生，以此类推。
 > ### 【不允许使用if switch等】
 
@@ -1887,6 +1901,9 @@ __<font color="#8BB0D2">解析：</font>__
 假使这个学生他的成绩为98： <br />
 parseInt(98 / 10) = 9, <br />
 那么10 - 9 = 1，就是这个学生的等级。
+
+---
+<br />
 
 > ### 7. 请用一句话遍历变量a。 <br />
 > ### 禁止使用for, 已知var a = "abc";
@@ -1956,6 +1973,9 @@ var a = "abc";
 // ["a", "b", "c"]
 console.log(Array.prototype.slice.call(a));
 ```
+
+---
+<br />
 
 > ### 8. 写出如下代码执行结果，并解释为什么。
 __<font color="#666">原题：</font>__
@@ -2034,3 +2054,7 @@ var yideng = {
 // fn挂到了arguments上，所以fn就是method的参数
 yideng.method(fn, 1);  // 10, 2
 ```
+
+---
+
+<font color="#666" size="5">\~End~</font>
