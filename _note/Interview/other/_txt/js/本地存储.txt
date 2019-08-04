@@ -1,0 +1,37 @@
+1、请描述一下cookies, sessionStroage, localStroage的区别
+	共同点：都是保存在浏览器端，且同源的
+
+	1）cookie数据始终在同源的http请求中携带（即使不需要），每次请求，
+	浏览器都会把本机存的cookies发送到服务器，无形中浪费带宽
+	即cookie在浏览器和服务器间来回传递，而sessionStorage和
+	localStorage不会自动把数据发给服务器，仅在本地保存。
+
+	2）存储大小限制不同，cookie数据不能超过4k，同时因为每次http请求都会携带cookie，
+	所以cookie只适合保存很小的数据，如会话标识。
+	sessionStorage和localStorage 虽然也有存储大小的限制，但比cookie大得多，可以达到5M或更大
+
+	3）数据有效期不同，sessionStorage：仅在当前浏览器窗口关闭前有效，
+	localStorage：始终有效，窗口或浏览器关闭也一直保存，因此用作持久数据
+	cookie只在设置的cookie过期时间之前一直有效，即使窗口或浏览器关闭
+
+	4）作用域不同，sessionStorage不在不同的浏览器窗口中共享，即使是同一个页面,
+	localStorage 在所有同源窗口中都是共享的,cookie也是在所有同源窗口中都是共享的
+
+
+
+sessionStorage用于本地存储一个会话（session）中的数据，这些数据只有在同一个会话中的页面才能访问
+并且当会话结束后数据也随之销毁。因此sessionStorage不是一种持久化的本地存储，仅仅是会话级别的存储。
+
+localStorage用于持久化的本地存储，除非主动删除数据，否则数据是永远不会过期。
+
+为什么选择Web Storage而不是Cookie？
+与Cookie相比，Web Storage存在不少的优势，概括为以下几点：
+
+	1. 存储空间更大：IE8下每个独立的存储空间为10M，其他浏览器实现略有不同，但都比Cookie要大很多。
+
+	2. 存储内容不会发送到服务器：当设置了Cookie后，Cookie的内容会随着请求一并发送给服务器，
+	这对于本地存储的数据是一种带宽浪费。而Web Storage中的数据则仅仅是存在本地，不会与服务器发生任何交互。
+
+	3.更多丰富易用的接口：Web Storage提供了一套更为丰富的接口，使得数据操作更为简便。
+
+	4、独立的存储空间：每个域（包括子域）有独立的存储空间，各个存储空间是完全独立的，因此不会造成数据混乱。

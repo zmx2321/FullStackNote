@@ -1,0 +1,39 @@
+{
+  "name": "jsdk_admin",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "element-ui": "^2.4.11",
+    "js-md5": "^0.7.3",
+    "less": "^3.9.0",
+    "less-loader": "^4.1.0",
+    "vue": "^2.5.21",
+    "vue-i18n": "^8.8.2",
+    "vue-router": "^3.0.1",
+    "vuex": "^3.0.1"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^3.2.0",
+    "@vue/cli-service": "^3.2.0",
+    "vue-template-compiler": "^2.5.21"
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ],
+  "description": "## Project setup ``` npm install ```",
+  "main": "babel.config.js",
+  "author": "zmx",
+  "license": "ISC"
+}
