@@ -1,18 +1,18 @@
 <template>
     <section class="main_cont f-pr">
         <div class="content">
-            <sm-viewer cesiumPath="YOUR_CESIUM_LIB_PATH"></sm-viewer>
+            <!-- <sm-viewer></sm-viewer> -->
         </div>
     </section>
 </template>
 
 <script>
-    import SmViewer from '../../components/vue-cesium-supermap/cesium/cesium1.vue'
+    // import SmViewer from '../../components/vue-cesium-supermap/cesium/cesium1.vue'
 
     export default {
-        components: {
-            SmViewer
-        },
+        // components: {
+        //     // SmViewer
+        // },
         
         name: 'cesium_demo1',
 

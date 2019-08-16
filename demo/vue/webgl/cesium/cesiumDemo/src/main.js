@@ -7,7 +7,8 @@ import i18n from './assets/i18n/i18n';  // 引入国际化组件
 
 import md5 from 'js-md5';  //md5加密
 
-import SuperMapCesium from 'vue-cesium-supermap'  // Vue SuperMap Cesium
+// Vue-Cesium默认加载`https://unpkg.com/cesium/Build/Cesium/Cesium.js`
+import VueCesium from 'vue-cesium'
 
 import ElementUI from 'element-ui'  // 引入element-ui
 import 'element-ui/lib/theme-chalk/index.css'
@@ -21,8 +22,9 @@ Vue.config.productionTip = false;
 Vue.use(ElementUI);
 Vue.use(i18n);
 
-// 使用SuperMapCesium
-Vue.use(SuperMapCesium, {
+// 使用Cesium
+// Vue.use(VueCesium)
+Vue.use(VueCesium, {
     // cesiumPath 是指引用的Cesium的文件夹路径， 如
     //cesiumPath: './static/Cesium'
     //在线引用

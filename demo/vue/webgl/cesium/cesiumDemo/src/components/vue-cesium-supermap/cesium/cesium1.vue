@@ -1,7 +1,7 @@
 <template>
     <section class="main_cont f-pr">
         <div class="content">
-            <sm-viewer></sm-viewer>
+            <!-- <sm-viewer></sm-viewer> -->
             <!-- <sm-viewer :animation="animation" :camera="camera" @ready="ready"></sm-viewer> -->
         </div>
     </section>
