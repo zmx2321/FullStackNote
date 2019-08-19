@@ -1,7 +1,7 @@
 <template>
     <section class="main_cont f-pr">
         <div class="content">
-            <cesium-viewer></cesium-viewer>
+            <cesium-viewer :animation="animation" :camera="camera" @ready="ready"></cesium-viewer>
         </div>
     </section>
 </template>
@@ -12,10 +12,28 @@
 
         data() {
             return {
-                
+                camera: {
+                    position: {
+                    longitude: 104.06,
+                    latitude: 30.67,
+                    height: 2000
+                    },
+                    heading: 360,
+                    pitch: -90,
+                    roll: 0
+                },
+                animation: false
             }
         },
         methods: {
+            ready (cesiumInstance) {
+                const { Cesium, viewer } = cesiumInstance
+                // 在这儿获取Cesium和viewer实例，再执行相关逻辑代码
+                this.camera.position.longitude = 116.46
+                this.camera.position.latitude = 39.92
+                this.camera.position.height = 500
+                this.animation = true
+            }
         },
         // 预处理
         created () {

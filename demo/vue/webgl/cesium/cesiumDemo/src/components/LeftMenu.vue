@@ -11,35 +11,10 @@
                         </el-menu-item>
                     </router-link>
 
-                    <!-- cesiumDemo -->
-                    <router-link to="/cesium_demo1">
+                    <router-link to="/cesium_model">
                         <el-menu-item index="1">
                             <i class="fa fa-user"></i>
-                            <span slot="title">cesiumDemo1</span>
-                        </el-menu-item>
-                    </router-link>
-                    <router-link to="/cesium_demo2">
-                        <el-menu-item index="2">
-                            <i class="fa fa-user"></i>
-                            <span slot="title">cesiumDemo2</span>
-                        </el-menu-item>
-                    </router-link>
-                    <router-link to="/cesium_demo3">
-                        <el-menu-item index="3">
-                            <i class="fa fa-user"></i>
-                            <span slot="title">cesiumDemo3</span>
-                        </el-menu-item>
-                    </router-link>
-                    <router-link to="/cesium_demo4">
-                        <el-menu-item index="4">
-                            <i class="fa fa-user"></i>
-                            <span slot="title">cesiumDemo4</span>
-                        </el-menu-item>
-                    </router-link>
-                    <router-link to="/cesium_demo5">
-                        <el-menu-item index="5">
-                            <i class="fa fa-user"></i>
-                            <span slot="title">cesiumDemo5</span>
+                            <span slot="title">模板</span>
                         </el-menu-item>
                     </router-link>
 
@@ -72,14 +47,34 @@ export default {
     data() {
         return {
             items: [
-                /*{
+                {
                     icon: "fa fa-paragraph",
-                    name: "test",
-                    path: "infoshow",
+                    name: "开始",
+                    path: "开始",
                     children: [
-                        { path: "/test", name: "test" },
+                        { path: "/cesium_demo1", name: "快速上手" },
+                        { path: "/cesium_demo2", name: "基础" },
+                        { path: "/cesium_demo3", name: "HelloWorld" },
                     ]
-                }*/
+                },
+                {
+                    icon: "fa fa-paragraph",
+                    name: "场景",
+                    path: "场景",
+                    children: [
+                        { path: "/cesium_demo4", name: "场景" },
+                    ]
+                },
+                {
+                    icon: "fa fa-paragraph",
+                    name: "工具",
+                    path: "工具",
+                    children: [
+                        { path: "/cesium_demo5", name: "绘制" },
+                        { path: "/cesium_demo6", name: "量算" },
+                        { path: "/cesium_demo7", name: "导航罗盘" },
+                    ]
+                },
             ]
         };
     },
@@ -93,20 +88,8 @@ export default {
                 case "home":
                     return "0";
                     break;
-                case "cesium_demo1":
+                case "cesium_model":
                     return "1";
-                    break;
-                case "cesium_demo2":
-                    return "2";
-                    break;
-                case "cesium_demo3":
-                    return "3";
-                    break;
-                case "cesium_demo4":
-                    return "4";
-                    break;
-                case "cesium_demo5":
-                    return "5";
                     break;
             }
         },

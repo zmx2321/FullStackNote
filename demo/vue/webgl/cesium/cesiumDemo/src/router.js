@@ -21,11 +21,20 @@ import Test from './views/test/Test'
 import AccountManager from './views/manager/AccountManager'
 
 // cesiumDemo
+import CesiumDemo0 from './views/cesiumDemo/CesiumDemo0'
+
+// cesiumDemo/开始
 import CesiumDemo1 from './views/cesiumDemo/CesiumDemo1'
 import CesiumDemo2 from './views/cesiumDemo/CesiumDemo2'
 import CesiumDemo3 from './views/cesiumDemo/CesiumDemo3'
+
+// cesiumDemo/场景
 import CesiumDemo4 from './views/cesiumDemo/CesiumDemo4'
+
+// cesiumDemo/工具
 import CesiumDemo5 from './views/cesiumDemo/CesiumDemo5'
+import CesiumDemo6 from './views/cesiumDemo/CesiumDemo6'
+import CesiumDemo7 from './views/cesiumDemo/CesiumDemo6'
 
 
 Vue.use(Router);
@@ -57,11 +66,17 @@ const router = new Router({
                 { path: '/account_manager', component: AccountManager, name: 'account_manager' },
 
                 // cesiumDemo
+                { path: '/cesium_model', component: CesiumDemo0, name: 'cesium_model' },
+                // cesiumDemo/开始
                 { path: '/cesium_demo1', component: CesiumDemo1, name: 'cesium_demo1' },
                 { path: '/cesium_demo2', component: CesiumDemo2, name: 'cesium_demo2' },
                 { path: '/cesium_demo3', component: CesiumDemo3, name: 'cesium_demo3' },
+                // cesiumDemo/场景
                 { path: '/cesium_demo4', component: CesiumDemo4, name: 'cesium_demo4' },
+                // cesiumDemo/工具
                 { path: '/cesium_demo5', component: CesiumDemo5, name: 'cesium_demo5' },
+                { path: '/cesium_demo6', component: CesiumDemo6, name: 'cesium_demo6' },
+                { path: '/cesium_demo7', component: CesiumDemo7, name: 'cesium_demo7' },
             ]
         },
         // 登陆页面
