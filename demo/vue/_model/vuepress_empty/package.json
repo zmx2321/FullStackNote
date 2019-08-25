@@ -5,17 +5,18 @@
   "main": "index.js",
   "scripts": {
     "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs"
+    "docs:build": "vuepress build docs",
+    "deploy": "bash deploy.sh"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/webcodder/vpdemo.git"
+    "url": "git+https://github.com/webcodder/blog.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/webcodder/vpdemo/issues"
+    "url": "https://github.com/webcodder/blog/issues"
   },
-  "homepage": "https://github.com/webcodder/vpdemo#readme"
+  "homepage": "https://github.com/webcodder/blog#readme"
 }
