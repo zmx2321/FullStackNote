@@ -2,8 +2,8 @@ const navConf = require('../config/navconfig');
 const sidebarConf = require('../config/sidebarConf');
 
 module.exports = {
-  title: '智慧楼宇可视化集成管理运营系统',
-  description: '智慧楼宇可视化集成管理运营系统前端模块定义',
+  title: '博客demo',
+  description: '博客demo描述',
   locales: {
     '/': {
       lang: 'zh-CN'
