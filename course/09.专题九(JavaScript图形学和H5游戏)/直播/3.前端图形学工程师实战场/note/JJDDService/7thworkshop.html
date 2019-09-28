@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>7#车间</title>
+    <link rel="stylesheet" href="./css/bootstrap.css" />
+    <link rel="stylesheet" href="./css/base.css" />
+    <link rel="stylesheet" href="./css/annotation-style.css" />
+    <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="./img/favicon.ico" />
+  </head>
+
+  <body>
+    <!--顶部-->
+    <header class="header left" id="js-ann-header">
+      <div class="left nav">
+        <ul>
+          <li class="nav_active navTime">
+            <!-- <a href="">2019/01/26 星期六 晴 -7到5度</a>  -->
+            <a id="js-time"></a>
+          </li>
+        </ul>
+      </div>
+      <div class="header_center left">
+        <div class="jlogo clearfix">
+          <div class="jlogoImg"><img src="img/jlogo.png" /></div>
+          <p class="jtitle">精进电动菏泽工厂数据服务平台</p>
+        </div>
+      </div>
+      <div class="right connav text_right btn-group ">
+        <a
+          class="nav_active btn btn-default dropdown-toggle"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="true"
+        >
+          <i class="nav_3"></i>7#车间 <span class="caret"></span>
+        </a>
+        <ul class="navUl dropdown-menu">
+          <li><a href="index.html">工厂概览</a></li>
+        </ul>
+      </div>
+    </header>
+    <!--内容部分-->
+    <div class="con left">
+      <!--数据总概-->
+      <div class="con_div" id="js-ann-condiv">
+        <div class="con_div_text left textLeft">
+          <div class="con_div_text02 clearfix con_div_textse">
+            <!-- <div class="textpeople"> -->
+            <img src="img/ry.png" class="left text01_img" />
+            <div class="left text01_div">
+              <p>人员在岗数</p>
+              <p class="sky">45</p>
+            </div>
+            <!-- </div> -->
+          </div>
+        </div>
+        <div class="con_div_text left textLeft">
+          <div class="con_div_text02 clearfix con_div_textse">
+            <div class="textpeople">
+              <img src="img/cq.png" class="left text01_img" />
+              <div class="left text01_div">
+                <p>人员出勤率</p>
+                <p class="sky">80%</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="con_div_text left textLeft">
+          <div class="con_div_text02 clearfix con_div_textse">
+            <div class="textpeople">
+              <img src="img/trend2.png" class="left text01_img" />
+              <div class="left text01_div">
+                <p>周设备稼动率</p>
+                <p>80%</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- <div class="con_div_text left">
+                <div class="con_div_text02 clearfix">
+                    <img src="img/trend2.png" class="left text01_img" />
+                    <div class="left text01_div">
+                        <p>周设备稼动率</p>
+                        <p>80%</p>
+                    </div>
+                </div>
+            </div> -->
+      </div>
+      <!--统计分析图-->
+      <div class="div_any">
+        <div class="divanyInfo">
+          <div class="left div_any01" id="js-ann-any01">
+            <div class="div_any_child childSeven">
+              <div class="div_any_title">
+                <img src="img/ss.png" />车间实时产量
+              </div>
+              <p id="js-alive" class="p_chartp p-3"></p>
+            </div>
+          </div>
+          <div class="div_any02 left">
+            <div class="div_any_child div_height" style="text-align:center;">
+              <div class="div_any_title any_title_width">
+                <img src="img/title_3.png" />车间3D模型展示
+              </div>
+              <!-- <div id="map_div"> -->
+              <canvas id="myCanvas" style="height:98%;width:98%"></canvas>
+              <!-- </div> -->
+            </div>
+          </div>
+          <div class="right div_any01">
+            <div class="div_any_child childSeven">
+              <div class="div_any_title">
+                <img src="img/title_4.png" />质量趋势图
+              </div>
+              <p id="js-trend" class="p_chart p-3"></p>
+            </div>
+            <!-- <div class="div_any_child div_any_child_order">
+                        <div class="div_any_title"><img src="img/title_5.png">饼图</div>
+                        <p id="char4" class="p_chart"></p>
+                    </div> -->
+          </div>
+        </div>
+      </div>
+      <!--分析表格-->
+      <div class="div_table">
+        <div class="left div_table_box">
+          <div class="div_any_child div_any_child_table">
+            <div class="div_any_title"><img src="img/sb.png" />设备综合</div>
+            <p id="js-multiple" style="padding-top:3%" class="p_chartp p-3"></p>
+          </div>
+        </div>
+        <div class="left div_table_box tableBoxnum">
+          <div class="div_any_child div_any_child_table">
+            <div class="div_any_title"><img src="img/rw.png" />周生产任务</div>
+            <div class="table_p">
+              <table>
+                <thead>
+                  <tr>
+                    <th>产线</th>
+                    <th>订单总数</th>
+                    <th>已完成</th>
+                  </tr>
+                </thead>
+                <tbody id="js-tasks"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="left div_table_box tableBoxnum">
+          <div class="div_any_child div_any_child_table">
+            <div class="div_any_title">
+              <img src="img/gz.png" />设备故障信息
+            </div>
+            <div class="table_p">
+              <table>
+                <thead>
+                  <tr>
+                    <th>产线</th>
+                    <th>设备名称</th>
+                    <th>故障描述</th>
+                    <th>当前状态</th>
+                  </tr>
+                </thead>
+                <tbody id="js-equfail"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="clearfix"></div>
+    <script src="./js/jquery/jquery.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/echarts.min.js"></script>
+    <script src="./js/common.js"></script>
+    <script src="./js/workshop.js"></script>
+    <script src="./js/xeogl.js"></script>
+    <script src="./js/glTFModel.js"></script>
+    <script src="./js/config.js"></script>
+    <script src="./js/annotations/pin.js"></script>
+    <script src="./js/annotations/annotation.js"></script>
+    <script>
+      var scene = new xeogl.Scene({
+        transparent: true,
+        canvas: document.getElementById('myCanvas'),
+      });
+      xeogl.setDefaultScene(scene);
+      var camera = scene.camera;
+      camera.orbitPitch(20);
+      var femaleModel = new xeogl.GLTFModel({
+        id: 'femaleModel',
+        src: './models/7thWorkshopModelV2/7thWorkshopModelV2.gltf',
+      });
+      var cameraOuterFlight = new xeogl.CameraFlightAnimation({
+        fit: true,
+        fitFOV: 57,
+      });
+      var cameraFlight = new xeogl.CameraFlightAnimation();
+      //所有气泡显式
+      var annotations = [];
+      femaleModel.on('loaded', function() {
+        cameraOuterFlight.flyTo(femaleModel.scene);
+      });
+      var cameraControl = new xeogl.CameraControl({
+        panToPointer: true,
+        pivoting: true,
+      });
+      var input = scene.input;
+      cameraControl.on('hoverEnter', function(hit) {
+        var flag = highlightArr.indexOf(hit.mesh.id);
+        if (flag < 0) {
+          hit.mesh.highlighted = true;
+        }
+      });
+      cameraControl.on('hoverOut', function(hit) {
+        hit.mesh.highlighted = false;
+      });
+      var annotation;
+      function createAnnotation(
+        { title = '暂无数据', desc = '暂无数据请补充' },
+        hit,
+      ) {
+        annotation = new xeogl.Annotation({
+          mesh: hit.mesh.id,
+          primIndex: hit.primIndex,
+          bary: hit.bary,
+          occludable: true,
+          glyph: '1',
+          title,
+          desc,
+          eye: camera.eye,
+          look: camera.look,
+          up: camera.up,
+          pinShown: true,
+          labelShown: true,
+        });
+      }
+      //打开房顶
+      cameraControl.on('picked', function(hit) {
+        // hit = self.scene.pick({
+        //     canvasPos: mesh.position,
+        //     pickSurface: true,
+        //     // excludeMeshes: ['_2398','_2491'],
+        //   });
+        var mesh = hit.mesh;
+        console.log('🏡模型id', mesh.id);
+        var camera = mesh.scene.camera;
+        if (annotation) {
+          annotation.destroy();
+          annotation = null;
+        }
+        const info = pronumArr[mesh.id];
+        //只有标注的才产生气泡
+        if (info) {
+          if (info.title && info.desc) {
+            createAnnotation(info, hit);
+          }
+        }
+        var hideflag = hideArr.indexOf(mesh.id);
+        if (hideflag >= 0) {
+          mesh.visible = false;
+        }
+        // console.log(mesh);
+        cameraFlight.flyTo(mesh);
+      });
+      cameraControl.on('pickedNothing', function(hit) {
+        cameraOuterFlight.flyTo(femaleModel.scene);
+      });
+      $(document).on('click', '.xeogl-annotation-title ', function(e) {
+        if (annotation) {
+          annotation.destroy();
+          annotation = null;
+        }
+        return false;
+      });
+    </script>
+  </body>
+</html>

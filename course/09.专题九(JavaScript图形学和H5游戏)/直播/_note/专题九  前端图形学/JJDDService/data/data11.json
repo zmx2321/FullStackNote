@@ -1,0 +1,18 @@
+{
+    "failinfos": [{
+        "proline": "OD300",
+        "proname": "EOL测试",
+        "fault": "花键螺丝断",
+        "state": "维修已响应"
+    }, {
+        "proline": "冲压",
+        "proname": "定子焊接机",
+        "fault": "机门坏",
+        "state": "维修申请"
+    }, {
+        "proline": "机加",
+        "proname": "清理机器",
+        "fault": "链条脱轨",
+        "state": "维修已响应"
+    }]
+}

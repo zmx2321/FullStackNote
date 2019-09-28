@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>精进电动菏泽工厂数据服务平台</title>
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="./img/favicon.ico"> 
+</head>
+
+<body>
+    <!--顶部-->
+    <header class="header left">
+        <div class="left nav">
+            <ul>
+                <li class="nav_active navTime">
+                    <a id="js-time"></a>
+                    <!-- <a href="">晴 -7到5度</a>  -->
+                </li>
+            </ul>
+        </div>
+        <div class="header_center left">
+            <div class="jlogo clearfix">
+                <div class="jlogoImg"><img src="img/jlogo.png"></div>
+                <p class="jtitle">精进电动菏泽工厂数据服务平台</p>
+            </div>
+        </div>
+        <div class="right connav text_right btn-group ">
+            <a class="nav_active btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="true">
+                <i class="nav_4"></i>工厂概览 <span class="caret"></span>
+            </a>
+            <ul class="navUl dropdown-menu">
+                <!-- <li><a href="index.html">工厂概览</a> </li> -->
+                <li><a href="7thworkshop.html">7#车间</a> </li>
+            </ul>
+        </div>
+    </header>
+    <!--内容部分-->
+    <div class="con left">
+        <!--数据总概-->
+        <div class="con_div">
+            <div class="con_div_text left">
+                <div class="con_div_text01 left">
+                    <img src="img/finish2.png" class="left text01_img" />
+                    <div class="left text01_div">
+                        <p>周订单完成率</p>
+                        <p class="sky">80%</p>
+                    </div>
+                </div>
+                <div class="con_div_text01 right">
+                    <img src="img/orderj.png" class="left text01_img" />
+                    <div class="left text01_div">
+                        <p>周订单准交率</p>
+                        <p class="sky">80%</p>
+                    </div>
+                </div>
+            </div>
+            <div class="con_div_text left">
+                <div class="con_div_text01 left">
+                    <img src="img/quality2.png" class="left text01_img" />
+                    <div class="left text01_div">
+                        <p>周质量不良（ppm）</p>
+                        <p>80</p>
+                    </div>
+                </div>
+                <div class="con_div_text01 right">
+                    <img src="img/trend2.png" class="left text01_img" />
+                    <div class="left text01_div">
+                        <p>周设备稼动率</p>
+                        <p>80%</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--统计分析图-->
+        <div class="div_any">
+            <div class="divanyInfo">
+                <div class="left div_any01">
+                    <div class="div_any_child">
+                        <div class="div_any_title"><img src="img/order2.png">生产订单状况</div>
+                        <p id="js-prochart" class="p_chartp p-3"></p>
+                    </div>
+                    <div class="div_any_child div_any_child_order">
+                        <div class="div_any_title"><img src="img/order2.png">生产订单状况</div>
+                        <p id="js-prochart2" class="p_chartp p-3"></p>
+                    </div>
+                </div>
+                <div class="div_any02 left" style="text-align:center">
+                    <div class="div_any_child div_height">
+                        <div class="div_any_title any_title_width"><img src="img/model2.png">工厂3D模型展示 </div>
+                        <!-- <div id="map_div"> -->
+                        <canvas id="myCanvas" style="height:98%;width:95%"></canvas>
+                        <!-- </div> -->
+                    </div>
+                </div>
+                <div class="right div_any01">
+                    <div class="div_any_child">
+                        <div class="div_any_title"><img src="img/trend2.png">设备稼动率趋势 </div>
+                        <p id="js-promobility" class="p_chart p-3"></p>
+                    </div>
+                    <div class="div_any_child div_any_child_order">
+                        <div class="div_any_title"><img src="img/qualityfinish2.png">安全十字图</div>
+                        <!-- <p id="js-quality" style="padding-top:6%" class="p_chart"></p> -->
+                        <div class="p_chart" id="js-secnum" style="text-align:center">
+                            <div class="month">
+                                <div class="montnNum">
+                                    <div class="monthOne">
+                                        <div class="monthone">
+                                            <div class="cricleColor">
+                                                <p class="monthInfo">
+                                                    <i id="js-crossgraph-0" class="criclegray cricl"></i>
+                                                    <span>1月</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="monthtwo">
+                                            <div class="cricleColor">
+                                                <p class="monthInfo">
+                                                    <i id="js-crossgraph-1" class="criclegray cricl"></i>
+                                                    <span>2月</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="monthThree clearfix">
+                                        <div class="monththree">
+                                            <div class="cricleColor">
+                                                <p class="monthInfo">
+                                                    <i id="js-crossgraph-2" class="criclegray cricl"></i>
+                                                    <span>3月</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="monthfoue">
+                                            <div class="cricleColor">
+                                                <p class="monthInfo">
+                                                    <i id="js-crossgraph-3" class="criclegray cricl"></i>
+                                                    <span>4月</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="monthfive">
+                                            <div class="cricleColor">
+                                                <p class="monthInfo">
+                                                    <i id="js-crossgraph-4" class="criclegray cricl"></i>
+                                                    <span>5月</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="monthsix">
+                                            <div class="cricleColor">
+                                                <p class="monthInfo">
+                                                    <i id="js-crossgraph-5" class="criclegray cricl"></i>
+                                                    <span>6月</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="monthThree clearfix">
+                                        <div class="monththree">
+                                            <div class="cricleColor">
+                                                <p class="monthInfo">
+                                                    <i id="js-crossgraph-6" class="criclegray cricl"></i>
+                                                    <span>7月</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="monthfoue">
+                                            <div class="cricleColor">
+                                                <p class="monthInfo">
+                                                    <i id="js-crossgraph-7" class="criclegray cricl"></i>
+                                                    <span>8月</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="monthfive">
+                                            <div class="cricleColor">
+                                                <p class="monthInfo">
+                                                    <i id="js-crossgraph-8" class="criclegray cricl"></i>
+                                                    <span>9月</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="monthsix">
+                                            <div class="cricleColor">
+                                                <p class="monthInfo">
+                                                    <i id="js-crossgraph-9" class="criclegray cricl"></i>
+                                                    <span>10月</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="monthEleven monthOne">
+                                        <div class="monthone">
+                                            <div class="cricleColor">
+                                                <p class="monthInfo">
+                                                    <i id="js-crossgraph-10" class="criclegray cricl"></i>
+                                                    <span>11月</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="monthtwo">
+                                            <div class="cricleColor">
+                                                <p class="monthInfo">
+                                                    <i id="js-crossgraph-11" class="criclegray cricl"></i>
+                                                    <span>12月</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="safeTitle">
+                                安全生产连续
+                                <span id="js-continuity">0</span>
+                                天
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--分析表格-->
+        <div class="div_table">
+            <div class="left div_table_box">
+                <div class="div_any_child div_any_child_table">
+                    <div class="div_any_title"><img src="img/jiahua.png">生产计划达成率</div>
+                    <p id="js-proplan" class="p_chart p-3"></p>
+                </div>
+            </div>
+            <div class="left div_table_box tableBoxnum">
+                <div class="div_any_child div_any_child_table">
+                    <div class="div_any_title"><img src="img/title_4.png">质量趋势图 </div>
+                    <p id="js-quatrend" class="p_chart p-3"></p>
+                </div>
+            </div>
+            <div class="left div_table_box tableBoxnum">
+                <div class="div_any_child div_any_child_table" id="js-securitycon">
+                    <div class="div_any_title"><img src="img/anquan.png">安全日历 </div>
+                    <p id="js-security" style="padding-top:5%;" class="p_chart p-3"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./js/jquery/jquery.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/echarts.min.js"></script>
+    <script src="./js/xeogl.js"></script>
+    <script src="./js/glTFModel.js"></script>
+    <script src="./js/dayjs.min.js"></script>
+    <script src="./js/common.js"></script>
+    <script src="./js/index.js"></script>
+    <script>
+        var scene = xeogl.getDefaultScene();
+        var scene = new xeogl.Scene({
+            transparent: true,
+            canvas: document.getElementById("myCanvas")
+        });
+        xeogl.setDefaultScene(scene);
+        var camera = scene.camera;
+        var femaleModel = new xeogl.GLTFModel({
+            id: "femaleModel",
+            src: "./models/factoryAreaModelV1/factoryAreaModelV1.gltf",
+            scale: [0.1, 0.1, 0.1],
+            position: [0, 0, 0]
+        });
+        var cameraFlight = new xeogl.CameraFlightAnimation();
+        var cameraOuterFlight = new xeogl.CameraFlightAnimation({
+            fit: true,
+            fitFOV: 75,
+        });
+        femaleModel.on("loaded", function () {
+            cameraOuterFlight.flyTo(femaleModel.scene);
+        });
+        var cameraControl = new xeogl.CameraControl({
+            panToPointer: true,
+            pivoting: true
+        });
+        var input = scene.input;
+        var spinning = true;
+        scene.on("tick", function () {
+            if (spinning) {
+                camera.orbitYaw(-0.05);
+            }
+        });
+        cameraControl.on("hoverEnter", function (hit) {
+            hit.mesh.highlighted = true;
+        });
+        cameraControl.on("hoverOut", function (hit) {
+            hit.mesh.highlighted = false;
+        });
+        // cameraControl.on("picked", function (hit) {
+        //     var mesh = hit.mesh;
+        //     //7号车间是否跳转
+        //     if (mesh.id == "_22953") {
+        //         mesh.position = [0, 1000, 0];
+        //     }
+        //     console.log(mesh);
+        // });
+        cameraControl.on("pickedNothing", function (hit) {
+            //cameraFlight.flyTo(femaleModel.scene);
+            cameraOuterFlight.flyTo(femaleModel.scene);
+        });
+    </script>
+</body>
+
+</html>
