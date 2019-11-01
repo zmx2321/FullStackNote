@@ -120,3 +120,9 @@
 > 显示最近的10条
 - 登陆失败的记录
 `last b`
+
+
+
+scp E:\dhData\as.txt root@192.168.0.42:/usr/local/nginx/html
+
+service network restart
