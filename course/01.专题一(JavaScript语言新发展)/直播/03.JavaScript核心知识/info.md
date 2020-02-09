@@ -817,7 +817,7 @@ function fn() {
 fn();  // 0 => iframe数量
 ```
 
-> #### <font color="#D9462F"> 2-8 能改变this指向的关键词（深度扩展）
+> #### <font color="#D9462F"> 2-8 能改变this指向的关键词（深度扩展）</font>
 > #### bind、apply、call</font>
 
 __<font color="#f00">表达式声明的函数注意事项：</font>__
@@ -1071,8 +1071,8 @@ result();  // 硬绑 => 30
 new result();  // undefined
 ```
 
-> #### <font color="#D9462F">2-8-1-5示例：<font color="#f00">[重点][重点][重点]</font>：
-> 手写一个bind</font>
+> #### <font color="#D9462F">2-8-1-5示例：<font color="#f00">[重点][重点][重点]</font></font>：
+> <font color="#f00">手写一个bind</font>
 
 <font color="#EB563B">__Array.prototype.slice.call(arguments)详解：__</font>
 
