@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>珠峰培训</title>
+</head>
+
+<body>
+  <script>
+    /*
+     * EC(G)
+     *   变量提升: function foo;
+     */
+    {
+      /*
+       * EC(BLOCK)
+       *   变量提升：function foo(){}
+       */
+      function foo() { } //=>因为此函数在全局下声明过，再私有中也声明过(处理：把之前对于foo操作映射给全局一份，但是下面的操作都认为是对私有foo的操作了)
+      foo = 1;
+      //=>1
+    }
+    console.log(foo);//=>函数
+
+    //全局  function foo;
+    {
+      // 私有 function foo() { }  /  function foo() { }
+      // =>foo是最后的这个函数
+      function foo() { }  //之前的代码映射到全局
+      foo = 1;
+      function foo() { }  //之前代码映射到全局
+      //=>1
+    }
+    console.log(foo);  //=>1
+
+
+    // 全局 function foo;
+    {
+      function foo() { }
+      foo = 1;
+      function foo() { }
+      foo = 2;
+      //=>2
+    }
+    console.log(foo);  //=>1
+  </script>
+</body>
+
+</html>

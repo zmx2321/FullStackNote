@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>珠峰培训</title>
+</head>
+
+<body>
+  <script>
+    /*
+     * 权限校验
+     *   1.登陆态校验
+     *     ->beforeEach（登陆态存储在vuex中）
+     *     ->向服务器发送请求
+     *       + 登陆的时候，登陆成功后会在vuex中存储已经登陆 isLogin
+     *       + 为了防止页面刷新过程中vuex存储信息消失，服务器是记录登陆态的
+     *            + 会话方式  cookie session
+     *            + token方式  JWT生成token  客户端把token存储起来（本地）
+     *   2.接口权限校验  token
+     *   3.菜单/按钮/功能的权限【显示隐藏】
+     *     ->登陆成功从服务器获取用户的权限字段，存储在本地（本地存储[不安全，可以加密存储] / vuex[推荐]）
+     *     ->自定义指令控制渲染还是不渲染（不建议大家组件内 v-if）
+     *     ->有的公司，客户端渲染的菜单，都是服务器返回的HTML(服务器压力比较大，但是安全)
+     *   4.不管是否有权限都能看，只不过点击会提示或者不让跳转路由，再或者跳转到指定的路由
+     *     ->beforeEach
+     *     ->组件内自己判断
+     *   5.数据接口权限
+     *     ->服务器处理的（保证绝对的安全性）
+     */
+  </script>
+</body>
+
+</html>
